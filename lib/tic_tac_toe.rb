@@ -36,13 +36,15 @@ def move(board, index, player_token)
   board[index] = player_token
 end
 
+def position_taken?(board, index)
+  !(board[index].nil? || board[index] == " ")
+end
+
 def valid_move?(board, index)
   return !position_taken?(board, index) && index.between?(0,8)
 end
 
-def position_taken?(board, index)
-  !(board[index].nil? || board[index] == " ")
-end
+
 
 def turn_count(board)
   return board.select{|c| c == "X" || c == "O"}.length
