@@ -72,9 +72,9 @@ class TicTacToe
     return won?(@board) || draw?(@board)
   end
   
-  def winner(board)
-    if combo = won?(board)
-      return board[combo[0]]
+  def winner
+    if combo = won?
+      return @board[combo[0]]
     end
     return nil
   end
