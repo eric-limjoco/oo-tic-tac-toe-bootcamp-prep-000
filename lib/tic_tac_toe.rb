@@ -79,6 +79,7 @@ class TicTacToe
     end
     return nil
   end
+  
   def turn(board)
     puts "Please enter 1-9:"
     index = input_to_index(gets.strip)
@@ -90,7 +91,7 @@ class TicTacToe
     end
   end
   
-  def play(board)
+  def play
     until over?(board)
       turn(board)
     end
