@@ -44,8 +44,6 @@ def valid_move?(board, index)
   return !position_taken?(board, index) && index.between?(0,8)
 end
 
-
-
 def turn_count(board)
   return board.select{|c| c == "X" || c == "O"}.length
 end
@@ -64,10 +62,6 @@ def turn(board)
     turn(board)
   end
 end
-
-#-----------------------------------------
-
-
 
 def won?(board)
   WIN_COMBINATIONS.each do |combo|
@@ -100,8 +94,6 @@ def winner(board)
   end
   return nil
 end
-
-# Define your play method below
 
 def play(board)
   
