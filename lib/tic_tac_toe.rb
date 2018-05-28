@@ -65,11 +65,11 @@ class TicTacToe
   end
   
   def draw?
-    return full?(@board) && !won?(@board)
+    return full? && !won?
   end
   
   def over?
-    return won?(@board) || draw?(@board)
+    return won? || draw?
   end
   
   def winner
