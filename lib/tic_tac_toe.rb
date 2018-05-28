@@ -91,8 +91,8 @@ class TicTacToe
   end
   
   def play
-    until over?(board)
-      turn(board)
+    until over?
+      turn
     end
     
     if w = winner(board)
