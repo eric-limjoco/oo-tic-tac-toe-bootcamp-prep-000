@@ -39,14 +39,13 @@ class TicTacToe
     return !position_taken?(board, index) && index.between?(0,8)
   end
   
-  def turn_count(board)
-    return board.select{|c| c == "X" || c == "O"}.length
+  def turn_count
+    return @board.select{|c| c == "X" || c == "O"}.length
   end
   
-  def current_player(board)
-    return turn_count(board)%2 == 0 ? "X" : "O"
+  def current_player
+    return turn_count(@board)%2 == 0 ? "X" : "O"
   end
-  
   
   def won?
     WIN_COMBINATIONS.each do |combo|
@@ -61,16 +60,16 @@ class TicTacToe
     return false
   end
   
-  def full?(board)
-    return !board.any?{|c| c == " "}
+  def full?
+    return !@board.any?{|c| c == " "}
   end
   
-  def draw?(board)
-    return full?(board) && !won?(board)
+  def draw?
+    return full?(@board) && !won?(@board)
   end
   
-  def over?(board)
-    return won?(board) || draw?(board)
+  def over?
+    return won?(@board) || draw?(@board)
   end
   
   def winner(board)
